@@ -43,7 +43,7 @@
 			<div v-if="advancedMoLevel>=20">
 				<hr>
 				<button @click="buyChurch"
-				:disabled="!canBuyChurch">{{translate(`${churchs>0?'{0}场':''}比赛 [{1}位女工]`,pn(churchs),pn(churchCost))}}</button>
+				:disabled="!canBuyChurch">{{translate(`${churchs>0?'{0}级':''}信任 [{1}位女工]`,pn(churchs),pn(churchCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=6"
 				@click="buyChurchMax"
 				:disabled="!canBuyChurch&&!canBuyMoer">{{translate(`自动购买`)}}</button>
