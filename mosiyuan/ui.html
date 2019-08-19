@@ -111,7 +111,7 @@
 							<span>{{translate(`链接:{0}`,pn(crystal))}}</span>
 						</div>
 						<button @click="pray"
-						:disabled="!canPray">{{translate(`申请防护 [{0}次刷新]`,pn(prayCost))}}</button>
+						:disabled="!canPray">{{translate(`发布公告 [{0}次刷新]`,pn(prayCost))}}</button>
 						<button v-if="techLevel('xuanxue')>=2"
 						@click="()=>{while(canPray)pray();}"
 						:disabled="!canPray">{{translate(`最大`)}}</button>
