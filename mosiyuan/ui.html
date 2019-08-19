@@ -1,9 +1,9 @@
 <div>
 	<model-alert
 		v-if="showUpdate"
-		:title="translate(`膜拜{Siyuan} {0} {1}`,VERSION,translate(VERSION_NAME))"
+		:title="translate(`刷新公告 {0} {1}`,VERSION,translate(VERSION_NAME))"
 		:value="translate(`新增了时间感应，调整了整洁。\n修复了一些 bug。`)"></model-alert>
-	<h1 v-html="translate(`膜拜{Siyuan}`)"></h1>
+	<h1 v-html="translate(`刷新公告`)"></h1>
 	<div>
 		<button style="float: right;" @click="()=>dailyMessage=DAILY_MESSAGES[Math.floor(Math.random()*DAILY_MESSAGES.length)]">{{translate(`换一个`)}}</button>
 		<p v-html="translate(dailyMessage)"></p>
@@ -11,9 +11,9 @@
 	<div class="area">
 		<h2 v-html="translate(`荒野`)"></h2>
 		<blockquote>
-			<p v-html="translate(`曾经，有一个高度发达的文明在这个星球上度过了它最为繁荣的时代。{!}在那时，人们相信{Siyuan}是最强的神，也是这个星球的算法、数论与卡常三大学科体系高度发展的原因。`)"></p>
+			<p v-html="translate(`曾经，有一个高度发达的文明在这个星球上度过了它最为繁荣的时代。{!}在那时，人们相信CCF是最强的神，也是这个星球的算法、数论与卡常三大学科体系高度发展的原因。`)"></p>
 			<p v-html="translate(`然而好景不长，曾被人们认为亘古不变的真理在一次失控的比赛之后支离破碎。{!}算法与数论的支柱轰然倒塌，毁灭席卷了整个星球。`)"></p>
-			<p v-html="translate(`高楼变为废墟，机房化作黄土，电脑碎成砂砾，但{Siyuan}并未抛弃这个文明——因为卡常仍在。`)"></p>
+			<p v-html="translate(`高楼变为废墟，机房化作黄土，电脑碎成砂砾，但CCF并未抛弃这个文明——因为卡常仍在。`)"></p>
 		</blockquote>
 		<div class="col">
 			<h4 v-html="translate(`刷新`)"></h4>
@@ -21,7 +21,7 @@
 				<div>
 					<span>{{translate(`您已刷新{0}次`,pn(Math.floor(moValue)))}}</span>
 				</div>
-				<button @click="moSiyuan(1)" style="color:red" v-html="moDelta!==1?translate(`刷新{Siyuan}{0}次`,pn(moDelta)):translate(`刷新{Siyuan}`)"></button>
+				<button @click="moSiyuan(1)" style="color:red" v-html="moDelta!==1?translate(`刷新公告{0}次`,pn(moDelta)):translate(`刷新公告`)"></button>
 				<span v-if="bookEffect>0">{{translate(`{0}点击/秒`,pn(bookEffect))}}</span>
 			</div>
 			<div v-if="moCount>=10">
@@ -100,7 +100,7 @@
 		<strong>{{translate(`已发现{0}个遗迹`,pn(temple))}}</strong>
 		<blockquote>
 			<p v-html="translate(`过去的事物深埋于地下，而且数量稀少，发掘它们需要坚定的信仰。{!}尽管道路艰辛，但这是前进所必须的代价。{!}文明不进即退，而这残存的文明已经无路可退。`)"></p>
-			<p v-html="translate(`在遗迹中，人们惊喜地发现了向{Siyuan}祈求水晶的途径。{!}拥有了水晶，两扇大门便随着遗迹的探索徐徐开启……`)"></p>
+			<p v-html="translate(`在遗迹中，人们惊喜地发现了向CCF祈求水晶的途径。{!}拥有了水晶，两扇大门便随着遗迹的探索徐徐开启……`)"></p>
 		</blockquote>
 		<div class="area">
 			<div class="area">
@@ -377,7 +377,7 @@
 	<div class="area" v-if="tech.explore>0">
 		<h2 v-html="translate(`外域`)"></h2>
 		<blockquote>
-			<p v-html="translate(`随着文明的重新建立，人们意识到这个星球上遗留的文明不止一个。{!}“比平凡与愚昧更可怕的是失去光明。”{!}他们是否仍膜拜着{Siyuan}呢？`)"></p>
+			<p v-html="translate(`随着文明的重新建立，人们意识到这个星球上遗留的文明不止一个。{!}“比平凡与愚昧更可怕的是失去光明。”{!}他们是否仍刷新着CCF呢？`)"></p>
 			<p v-html="translate(`不管如何，人们已经不甘于平凡的生活了。{!}当得知关于敌人的消息后，他们反而热血沸腾，渴望通过战斗来获得全新的资源。`)"></p>
 		</blockquote>
 		<div class="area">
