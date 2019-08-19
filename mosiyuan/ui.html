@@ -11,23 +11,23 @@
 	<div class="area">
 		<h2 v-html="translate(`荒野`)"></h2>
 		<blockquote>
-			<p v-html="translate(`曾经，有一个高度发达的文明在这个星球上度过了它最为繁荣的时代。{!}在那时，人们相信{Siyuan}是最强的神，也是这个星球的科技、魔法与信仰三大学科体系高度发展的原因。`)"></p>
-			<p v-html="translate(`然而好景不长，曾被人们认为亘古不变的真理在一次失控的魔法实验之后支离破碎。{!}科技与魔法的支柱轰然倒塌，毁灭席卷了整个星球。`)"></p>
-			<p v-html="translate(`高楼变为废墟，法阵化作黄土，雕像碎成砂砾，但{Siyuan}并未抛弃这个文明——因为信仰仍在。`)"></p>
+			<p v-html="translate(`曾经，有一个高度发达的文明在这个星球上度过了它最为繁荣的时代。{!}在那时，人们相信{Siyuan}是最强的神，也是这个星球的算法、数论与卡常三大学科体系高度发展的原因。`)"></p>
+			<p v-html="translate(`然而好景不长，曾被人们认为亘古不变的真理在一次失控的比赛之后支离破碎。{!}算法与数论的支柱轰然倒塌，毁灭席卷了整个星球。`)"></p>
+			<p v-html="translate(`高楼变为废墟，机房化作黄土，电脑碎成砂砾，但{Siyuan}并未抛弃这个文明——因为卡常仍在。`)"></p>
 		</blockquote>
 		<div class="col">
-			<h4 v-html="translate(`膜拜`)"></h4>
+			<h4 v-html="translate(`刷新`)"></h4>
 			<div>
 				<div>
-					<span>{{translate(`您已膜拜{0}次`,pn(Math.floor(moValue)))}}</span>
+					<span>{{translate(`您已刷新{0}次`,pn(Math.floor(moValue)))}}</span>
 				</div>
-				<button @click="moSiyuan(1)" style="color:red" v-html="moDelta!==1?translate(`膜拜{Siyuan}{0}次`,pn(moDelta)):translate(`膜拜{Siyuan}`)"></button>
+				<button @click="moSiyuan(1)" style="color:red" v-html="moDelta!==1?translate(`刷新{Siyuan}{0}次`,pn(moDelta)):translate(`刷新{Siyuan}`)"></button>
 				<span v-if="bookEffect>0">{{translate(`{0}点击/秒`,pn(bookEffect))}}</span>
 			</div>
 			<div v-if="moCount>=10">
 				<hr>
 				<button @click="buyAdvancedMo"
-				:disabled="!canBuyAdvancedMo">{{translate(`真诚膜拜{0} [{1}次膜拜]`,advancedMoLevel>0?' Lv.'+pn(advancedMoLevel):'',pn(advancedMoCost))}}</button>
+				:disabled="!canBuyAdvancedMo">{{translate(`手速刷新{0} [{1}次刷新]`,advancedMoLevel>0?' Lv.'+pn(advancedMoLevel):'',pn(advancedMoCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=1"
 				@click="()=>{while(canBuyAdvancedMo)buyAdvancedMo();}"
 				:disabled="!canBuyAdvancedMo">{{translate(`最大`)}}</button>
@@ -35,7 +35,7 @@
 			<div v-if="advancedMoLevel>=10">
 				<hr>
 				<button @click="buyMoer"
-				:disabled="!canBuyMoer">{{translate(`${moers>0?'{0}位':''}信徒 [{1}次膜拜]`,pn(moers),pn(moerCost))}}</button>
+				:disabled="!canBuyMoer">{{translate(`${moers>0?'{0}位':''}女工 [{1}次刷新]`,pn(moers),pn(moerCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=2"
 				@click="()=>{while(canBuyMoer)buyMoer();}"
 				:disabled="!canBuyMoer">{{translate(`最大`)}}</button>
@@ -43,33 +43,33 @@
 			<div v-if="advancedMoLevel>=20">
 				<hr>
 				<button @click="buyChurch"
-				:disabled="!canBuyChurch">{{translate(`${churchs>0?'{0}座':''}教堂 [{1}位信徒]`,pn(churchs),pn(churchCost))}}</button>
+				:disabled="!canBuyChurch">{{translate(`${churchs>0?'{0}场':''}比赛 [{1}位女工]`,pn(churchs),pn(churchCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=6"
 				@click="buyChurchMax"
 				:disabled="!canBuyChurch&&!canBuyMoer">{{translate(`自动购买`)}}</button>
 			</div>
 		</div>
 		<div class="col" v-if="churchs>=5">
-			<h4 v-html="translate(`信仰`)"></h4>
+			<h4 v-html="translate(`人品`)"></h4>
 			<div>
 				<div>
-					<span>{{translate(`信仰:{0}`,pn(XY))}}</span>
+					<span>{{translate(`人品:{0}`,pn(XY))}}</span>
 				</div>
-				<button @click="buyXY" :disabled="moValue&lt;=0">{{translate(`转化信仰 (+{0}信仰)`,pn(XYEarn))}}</button>
+				<button @click="buyXY" :disabled="moValue&lt;=0">{{translate(`转化人品 (+{0}人品)`,pn(XYEarn))}}</button>
 			</div>
 			<div v-if="XY>=100||books>0">
 				<hr>
 				<button @click="buyBook"
-				:disabled="!canBuyBook">{{translate(`${books>0?'{0}卷':''}经书 [{1}信仰]`,pn(books),pn(bookCost))}}</button>
+				:disabled="!canBuyBook">{{translate(`${books>0?'{0}份':''}公告 [{1}人品]`,pn(books),pn(bookCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=1"
 				@click="()=>{while(canBuyBook)buyBook();}"
 				:disabled="!canBuyBook">{{translate(`最大`)}}</button>
 			</div>
 			<div v-if="books>0||sping||spLevel>0">
 				<hr>
-				<button v-if="sping" disabled="disabled">{{translate(`传教{0}`,pnr(spLevel))}}</button>
+				<button v-if="sping" disabled="disabled">{{translate(`比赛{0}`,pnr(spLevel))}}</button>
 				<button v-else @click="sp"
-				:disabled="books&lt;spCost">{{translate(`传教{0} [{1}本经书]`,pnr(spLevel),spCost)}}</button>
+				:disabled="books&lt;spCost">{{translate(`比赛{0} [{1}份公告]`,pnr(spLevel),spCost)}}</button>
 				<hint-message :value="spMessage" :update="spMessageUpdate"></hint-message>
 				<div v-if="sping">
 					<span v-html="translate(SP_PROBLEMS[spingProblem.pid][0])"></span>
@@ -86,11 +86,11 @@
 				<div v-if="moers>=exploreNeed">
 					<hr>
 					<button @click="exploreTemple"
-					:disabled="XY<exploreTempleCost">{{translate(`探索遗迹 [{0}信仰]`,pn(exploreTempleCost))}}</button>	
+					:disabled="XY<exploreTempleCost">{{translate(`发布公告 [{0}人品]`,pn(exploreTempleCost))}}</button>	
 				</div>
 				<div v-else>
 					<hr>
-					{{translate(`探索下一个遗迹需要{0}位信徒`,pn(exploreNeed))}}
+					{{translate(`发布下一个公告需要{0}位女工`,pn(exploreNeed))}}
 				</div>
 			</div>
 		</div>
