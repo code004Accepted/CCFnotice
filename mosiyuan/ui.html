@@ -60,7 +60,7 @@
 			<div v-if="XY>=100||books>0">
 				<hr>
 				<button @click="buyBook"
-				:disabled="!canBuyBook">{{translate(`${books>0?'{0}份':''}公告 [{1}人品]`,pn(books),pn(bookCost))}}</button>
+				:disabled="!canBuyBook">{{translate(`${books>0?'{0}份':''}邀请函 [{1}人品]`,pn(books),pn(bookCost))}}</button>
 				<button v-if="techLevel('xuanxue')>=1"
 				@click="()=>{while(canBuyBook)buyBook();}"
 				:disabled="!canBuyBook">{{translate(`最大`)}}</button>
@@ -69,7 +69,7 @@
 				<hr>
 				<button v-if="sping" disabled="disabled">{{translate(`比赛{0}`,pnr(spLevel))}}</button>
 				<button v-else @click="sp"
-				:disabled="books&lt;spCost">{{translate(`比赛{0} [{1}份公告]`,pnr(spLevel),spCost)}}</button>
+				:disabled="books&lt;spCost">{{translate(`比赛{0} [{1}份邀请函]`,pnr(spLevel),spCost)}}</button>
 				<hint-message :value="spMessage" :update="spMessageUpdate"></hint-message>
 				<div v-if="sping">
 					<span v-html="translate(SP_PROBLEMS[spingProblem.pid][0])"></span>
