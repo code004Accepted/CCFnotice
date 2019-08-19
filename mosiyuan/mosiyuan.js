@@ -2644,7 +2644,7 @@ Vue.component('model-alert',{
 							return obj;
 						}
 						console.log(
-							`膜拜 %cS%ciyuan%c 要真诚!\n%chttps://orzsiyuan.com/`,
+							`刷新 %cS%ciyuan%c 要真诚!\n%chttps://orzsiyuan.com/`,
 							'color:black;font-weight:bold;',
 							'color:red;font-weight:bold;',
 							'',
