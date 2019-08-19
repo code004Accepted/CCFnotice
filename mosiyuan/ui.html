@@ -96,22 +96,22 @@
 		</div>
 	</div>
 	<div class="area" v-if="temple>0">
-		<h2 v-html="translate(`遗迹`)"></h2>
-		<strong>{{translate(`已发现{0}个遗迹`,pn(temple))}}</strong>
+		<h2 v-html="translate(`公告`)"></h2>
+		<strong>{{translate(`已发布{0}个公告`,pn(temple))}}</strong>
 		<blockquote>
-			<p v-html="translate(`过去的事物深埋于地下，而且数量稀少，发掘它们需要坚定的信仰。{!}尽管道路艰辛，但这是前进所必须的代价。{!}文明不进即退，而这残存的文明已经无路可退。`)"></p>
-			<p v-html="translate(`在遗迹中，人们惊喜地发现了向CCF祈求水晶的途径。{!}拥有了水晶，两扇大门便随着遗迹的探索徐徐开启……`)"></p>
+			<p v-html="translate(`CCF过去发布的公告深埋于旧版网站中，而且数量稀少，发掘它们需要坚定的信仰。{!}尽管道路艰辛，但这是前进所必须的代价。{!}文明不进即退，而这残存的文明已经无路可退。`)"></p>
+			<p v-html="translate(`在遗迹中，人们惊喜地发现了让CCF发布公告的途径。{!}添加了公告，两扇大门便随着noi.cn的探索徐徐开启……`)"></p>
 		</blockquote>
 		<div class="area">
 			<div class="area">
 				<div class="col">
-					<h4 v-html="translate(`遗迹大门`)"></h4>
+					<h4 v-html="translate(`公告中心`)"></h4>
 					<div>
 						<div>
-							<span>{{translate(`水晶:{0}`,pn(crystal))}}</span>
+							<span>{{translate(`链接:{0}`,pn(crystal))}}</span>
 						</div>
 						<button @click="pray"
-						:disabled="!canPray">{{translate(`祈求恩赐 [{0}次膜拜]`,pn(prayCost))}}</button>
+						:disabled="!canPray">{{translate(`申请防护 [{0}次刷新]`,pn(prayCost))}}</button>
 						<button v-if="techLevel('xuanxue')>=2"
 						@click="()=>{while(canPray)pray();}"
 						:disabled="!canPray">{{translate(`最大`)}}</button>
@@ -119,7 +119,7 @@
 					<div v-if="wisdomLevel>0||crystal>0">
 						<hr>
 						<button @click="wisdomUpgrade"
-						:disabled="!canUpgradeWisdom">{{translate(`智慧 Lv.{0} [{1}水晶]`,pn(wisdomLevel),wisdomUpgradeCost)}}</button>
+						:disabled="!canUpgradeWisdom">{{translate(`智慧 Lv.{0} [{1}链接]`,pn(wisdomLevel),wisdomUpgradeCost)}}</button>
 						<button v-if="techLevel('xuanxue')>=5"
 						@click="wisdomUpgradeMax"
 						:disabled="!canUpgradeWisdom&&!canPray">{{translate(`自动购买`)}}</button>
@@ -127,7 +127,7 @@
 					<div v-if="temple>=2&&(mysteryLevel>0||wisdomLevel>=1)">
 						<hr>
 						<button @click="mysteryUpgrade"
-						:disabled="!canUpgradeMystery">{{translate(`奥秘 Lv.{0} [{1}水晶]`,pn(mysteryLevel),mysteryUpgradeCost)}}</button>
+						:disabled="!canUpgradeMystery">{{translate(`奥秘 Lv.{0} [{1}链接]`,pn(mysteryLevel),mysteryUpgradeCost)}}</button>
 						<button v-if="techLevel('xuanxue')>=6"
 						@click="mysteryUpgradeMax"
 						:disabled="!canUpgradeMystery&&!canPray">{{translate(`自动购买`)}}</button>
@@ -135,18 +135,18 @@
 					<div v-if="temple>=3&&(natureLevel>0||mysteryLevel>=1)">
 						<hr>
 						<button @click="natureUpgrade"
-						:disabled="!canUpgradeNature">{{translate(`本质 Lv.{0} [{1}水晶]`,pn(natureLevel),natureUpgradeCost)}}</button>
+						:disabled="!canUpgradeNature">{{translate(`本质 Lv.{0} [{1}链接]`,pn(natureLevel),natureUpgradeCost)}}</button>
 						<button v-if="techLevel('xuanxue')>=7"
 						@click="natureUpgradeMax"
 						:disabled="!canUpgradeNature&&!canPray">{{translate(`自动购买`)}}</button>
 					</div>
 				</div>
 				<div class="col" v-if="wisdomLevel>=5">
-					<h4 v-html="translate(`朝圣地`)"></h4>
-					<div>{{translate(`宝石:{0}`,pn(gem))}}</div>
+					<h4 v-html="translate(`申请处`)"></h4>
+					<div>{{translate(`金钱:{0}`,pn(gem))}}</div>
 					<div>
 						<button @click="makeGem"
-						:disabled="makeGemEarn<1" >{{translate(`雕琢 (+{0}宝石)`,pn(makeGemEarn))}}</button>	
+						:disabled="makeGemEarn<1" >{{translate(`申请DDOS防护 (+{0}宝石)`,pn(makeGemEarn))}}</button>	
 					</div>
 					<div v-if="gem>0||altar>0">
 						<hr>
@@ -163,7 +163,7 @@
 			</div>
 			<div class="area">
 				<div class="col" v-if="mysteryLevel>=5">
-					<h4 v-html="translate(`炼金区`)"></h4>
+					<h4 v-html="translate(`赚钱区`)"></h4>
 					<div>{{translate(`魔法石:{0}`,pn(magicStone))}}</div>
 					<div>
 						<button @click="makeMagicStone"
