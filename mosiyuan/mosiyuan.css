@@ -57,7 +57,7 @@ button{
 	display: inline-block;
 }
 .siyuan::before{
-	content: 'Siyuan';
+	content: 'CCF';
 	font-weight: bold;
 	font-size: 0.9em;
 	color:red !important;
