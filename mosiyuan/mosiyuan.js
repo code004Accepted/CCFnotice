@@ -179,7 +179,7 @@ const DAILY_MESSAGES=[
 	`Siyuan:“tourist 能过，那窝肯定也能过！”`,
 	`萌新三连:“窝怎么立直了 nya？{!}胡是什么 nya，可以跳过吗？{!}自摸是不是每巡都有的，好烦 nya！”`,
 	'Markdown: [https://orzsiyuan.com](https://lmoliver.github.io/mosiyuan)',
-	`如果出现了难以对付的敌人，你可以<strong>召唤拯救</strong>扫清他们。`,
+	`如果出现了难以对付的敌人，你可以<strong>召唤神犇</strong>扫清他们。`,
 	`祝贺 Siyuan ZJOI2019 Day2 40+40+50=130分 && 触发女装 Flag !`,
 	`Siyuan AK NOI！`,
 	`Siyuan AK IOI！`,
@@ -353,39 +353,39 @@ const SP_PROBLEMS=[
 
 const SAVE_ITEMS={
 	moValue:{
-		name:'膜拜次数',
-		format:'VALUE次膜拜',
+		name:'刷新次数',
+		format:'VALUE次刷新',
 	},
 	moCount:{
 		name:'点击次数',
 		format:'VALUE次点击',
 	},
 	advancedMoLevel:{
-		name:'真诚膜拜等级',
-		format:'真诚膜拜Lv.VALUE',
+		name:'手速刷新等级',
+		format:'手速刷新Lv.VALUE',
 	},
 	moers:{
-		name:'信徒',
-		format:'VALUE位信徒',
+		name:'女工',
+		format:'VALUE位女工',
 	},
 	churchs:{
-		name:'教堂',
-		format:'VALUE座教堂',
+		name:'信任',
+		format:'VALUE级信任',
 	},
 	XY:{
-		name:'信仰',
-		format:'VALUE信仰',
+		name:'人品',
+		format:'VALUE人品',
 	},
 	books:{
-		name:'经书',
-		format:'VALUE本经书',
+		name:'邀请函',
+		format:'VALUE份邀请函',
 	},
 	spLevel:{
-		name:'传教等级',
-		format:'传教 Lv.{VALUE}',
+		name:'比赛等级',
+		format:'比赛 Lv.{VALUE}',
 	},
 	sping:{
-		name:'传教中',
+		name:'比赛中',
 		format:'{VALUE}',
 	},
 	spCombo:{
@@ -402,16 +402,16 @@ const SAVE_ITEMS={
 		},
 	},
 	temple:{
-		name:'遗迹',
-		format:'已探索VALUE个遗迹',
+		name:'公告',
+		format:'已探索VALUE份公告',
 	},
 	hugeStone:{
-		name:'巨石',
+		name:'芯片',
 		format:'VALUE块巨石',
 	},
 	fazhen:{
-		name:'法阵',
-		format:'VALUE座法阵',
+		name:'CPU',
+		format:'VALUE台CPU',
 	},
 	knowledgeBook:{
 		name:'知识之书',
@@ -551,12 +551,12 @@ const SAVE_ITEMS={
 		},
 	},
 	warMind:{
-		name:'战意感应强度',
-		format:'VALUE战意感应强度',
+		name:'刷题欲感应强度',
+		format:'VALUE刷题欲感应强度',
 		default:0,
 	},
 	warLevel:{
-		name:'战争等级',
+		name:'题目难度',
 		format:'VALUE',
 		default:0,
 	},
@@ -586,13 +586,13 @@ const SAVE_ITEMS={
 	// 	default:false,
 	// },
 	magicTreeSeed:{
-		name:'魔灵树树苗',
-		format:'VALUE株魔灵树树苗',
+		name:'摇钱树树苗',
+		format:'VALUE株摇钱树树苗',
 		default:0,
 	},
 	magicTree:{
-		name:'魔灵树',
-		format:'VALUE株魔灵树',
+		name:'摇钱树',
+		format:'VALUE株摇钱树',
 		default:0,
 	},
 	timeIDC:{
@@ -914,8 +914,8 @@ const TECH={
 			},
 		},
 		magicTree:{
-			name:'魔灵树',
-			description:'魔灵树的果实天生自带保护魔法，这使这些果实为敌人所觊觎。',
+			name:'摇钱树',
+			description:'摇钱树的果实天生自带保护魔法，这使这些果实为敌人所觊觎。',
 			require:[
 				['blessing',10],
 				['fazhenBuilding',10],
@@ -1097,8 +1097,8 @@ const ELEMENTS={
 	},
 
 	water:{
-		name:'Judging',
-		color:'#3498DB',
+		name:'TLE',
+		color:'#052242',
 		token:'α',
 	},
 	fire:{
@@ -1310,8 +1310,8 @@ const DEFENSE_BUILDING={
 		},
 	},
 	pureMagicTower:{
-		name:'纯魔巨炮',
-		description:['15.0魔法伤害(40~60s冷却)','水、火、土、风、魔元素各0.01/秒'],
+		name:'越界巨炮',
+		description:['15.0RE伤害(40~60s冷却)','TLE、PC、WA、CE、RE元素各0.01/秒'],
 		require:{
 			tech:[
 				['fazhenBuilding',5],
@@ -2644,7 +2644,7 @@ Vue.component('model-alert',{
 							return obj;
 						}
 						console.log(
-							`刷新 %cS%ciyuan%c 要真诚!\n%chttps://orzsiyuan.com/`,
+							`刷新CCF公告要真诚!\n%chttps://orzsiyuan.com/`,
 							'color:black;font-weight:bold;',
 							'color:red;font-weight:bold;',
 							'',
