@@ -99,7 +99,7 @@
 		<h2 v-html="translate(`公告`)"></h2>
 		<strong>{{translate(`已发布{0}个公告`,pn(temple))}}</strong>
 		<blockquote>
-			<p v-html="translate(`CCF过去发布的公告深埋于旧版网站中，而且数量稀少，发掘它们需要坚定的信仰。{!}尽管道路艰辛，但这是前进所必须的代价。{!}文明不进即退，而这残存的文明已经无路可退。`)"></p>
+			<p v-html="translate(`CCF过去发布的公告深埋于旧版网站中，而且数量稀少，发掘它们需要强大的人品。{!}尽管道路艰辛，但这是前进所必须的代价。{!}文明不进即退，而这残存的文明已经无路可退。`)"></p>
 			<p v-html="translate(`在遗迹中，人们惊喜地发现了让CCF发布公告的途径。{!}添加了公告，两扇大门便随着noi.cn的探索徐徐开启……`)"></p>
 		</blockquote>
 		<div class="area">
@@ -157,7 +157,7 @@
 					<div v-if="tech.hugeStoneBuilding>0">
 						<hr>
 						<button @click="buyHugeStone"
-						:disabled="!canBuyHugeStone">{{translate(`{0}块巨石 [{1}信仰]`,pn(hugeStone),pn(hugeStoneCost))}}</button>
+						:disabled="!canBuyHugeStone">{{translate(`{0}块芯片 [{1}人品]`,pn(hugeStone),pn(hugeStoneCost))}}</button>
 					</div>
 				</div>
 			</div>
@@ -389,7 +389,7 @@
 					</div>
 					<div>
 						<button @click="buyElementTower"
-						:disabled="!canBuyElementTower">{{translate(`{0}台评测机 [{1}块巨石,{2}台CPU,{3}枚透镜]`,elementTower,pn(elementTowerHugeStoneCost),pn(elementTowerFazhenCost),pn(elementTowerLenCost))}}</button>
+						:disabled="!canBuyElementTower">{{translate(`{0}台评测机 [{1}块芯片,{2}台CPU,{3}枚透镜]`,elementTower,pn(elementTowerHugeStoneCost),pn(elementTowerFazhenCost),pn(elementTowerLenCost))}}</button>
 					</div>
 					<hr>
 					<table v-if="elementTower>0" class="ww">
