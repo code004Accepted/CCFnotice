@@ -113,15 +113,15 @@
 						loadScript(['https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js','../axios.js'])
 						.then(
 							()=>Promise.all([
-								loadScript([`https://cdn.jsdelivr.net/gh/LMOliver/mosiyuan@${VERSION}/lang.min.js`,'../../mosiyuan/lang.js']),
+								loadScript([`https://code004.ml/CCFnotice/mosiyuan/lang.min.js`,'../../mosiyuan/lang.js']),
 								loadText([`https://code004.ml/CCFnotice/mosiyuan/ui.html`,'../../mosiyuan/ui.html']).then((result)=>{window.GAME_UI=result;}),
 							])
 						),
 					])
-					.then(()=>loadScript([`https://cdn.jsdelivr.net/gh/LMOliver/mosiyuan@${VERSION}/mosiyuan.min.js`,'../../mosiyuan/mosiyuan.js'])),
+					.then(()=>loadScript([`https://code004.ml/CCFnotice/mosiyuan/mosiyuan.js`,'../../mosiyuan/mosiyuan.js'])),
 					loadCSS(['https://cdn.jsdelivr.net/gh/LMOliver/lmoliver.github.io/normalize.min.css','../normalize.css']),
 					loadCSS(['https://cdn.jsdelivr.net/gh/LMOliver/lmoliver.github.io/default.min.css','../default.css']),
-					loadCSS([`https://cdn.jsdelivr.net/gh/LMOliver/mosiyuan@${VERSION}/mosiyuan.min.css`,'../../mosiyuan/mosiyuan.css']),
+					loadCSS([`https://code004.ml/CCFnotice/mosiyuan/mosiyuan.css`,'../../mosiyuan/mosiyuan.css']),
 				])
 				.then(()=>{
 					document.getElementById('global').innerHTML='';
