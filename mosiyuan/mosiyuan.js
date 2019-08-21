@@ -1097,29 +1097,29 @@ const ELEMENTS={
 	},
 
 	water:{
-		name:'水',
-		color:'lightblue',
+		name:'Judging',
+		color:'#3498DB',
 		token:'α',
 	},
 	fire:{
-		name:'火',
+		name:'PC',
 		color:'orange',
 		token:'β',
 	},
 	earth:{
-		name:'土',
-		color:'brown',
+		name:'WA',
+		color:'#E74C3C',
 		token:'γ',
 	},
 	wind:{
-		name:'风',
-		color:'#dddd00',
+		name:'CE',
+		color:'#FADB14',
 		token:'δ',
 	},
 
 	magic:{
-		name:'魔',
-		color:'purple',
+		name:'RE',
+		color:'#9D3DCF',
 		token:'λ',
 	},
 
